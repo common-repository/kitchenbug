@@ -1,0 +1,6 @@
+img.kitchenbugRecipe{
+	border: 1px dashed #888;
+	background: #f2f8ff url("../img/kb_top_logo.png") no-repeat scroll center center;
+	width: 99%;
+	height: 150px;
+}

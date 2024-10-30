@@ -1,0 +1,40 @@
+
+<div class="kb-side-menu-container">
+	
+	<div class="kb-side-menu">
+		
+	<ul>
+		
+		<li<?php if (!$this->nutritionHighlights ) : ?> class="kb-last-menu-item"<?php endif; ?>>
+
+			<a href="<?php echo $this->printPermalink; ?>" rel="nofollow" target="_blank">
+
+				<div class="kb-side-menu-item kb-btn-print" title="<?php echo $this->printAlternative; ?>">
+				
+					<span>Print</span>
+				
+				</div>
+				
+			</a>
+			
+		</li>
+		
+		<?php if ($this->nutritionHighlights ) : ?>
+		
+		<li class="kb-last-menu-item">
+		
+			<div class="kb-side-menu-item kb-btn-dig-in" title="<?php echo $this->digInAlternative; ?>">
+				
+				<span>Dig-in</span>
+				
+			</div>
+			
+		</li>
+		
+		<?php endif; ?>
+		
+	</ul>
+	
+	</div>
+	
+</div>

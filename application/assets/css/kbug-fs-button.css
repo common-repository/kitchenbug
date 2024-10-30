@@ -1,0 +1,7 @@
+#wp_fs_kitchenbug{
+	background: url('../img/icon_kb-logo_settings.png') no-repeat 2px 1px !important;
+}
+
+#wp_fs_kitchenbug:hover{
+	background: url('../img/icon_kb-logo_settings_hover.png') no-repeat 2px 1px !important;
+}

@@ -1,0 +1,48 @@
+body {
+	background-color: #ddd;
+	padding: 20px;
+	margin: 0;
+	text-align: center;
+}
+.page-wrap {
+	text-align: left;
+	width: 660px;
+	background-color: white;
+	position: relative;  
+    margin: 0 auto;  
+    background-color: #fff;  
+    -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);  
+    -moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);  
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+.kb-recipe-container {
+	padding: 30px 30px 50px;
+}
+.page-wrap:before,
+.page-wrap:after {
+	position: absolute;  
+    width: 40%;  
+    height: 10px;  
+    content: ' ';  
+    left: 12px;  
+    bottom: 12px;  
+    background: transparent;  
+    -webkit-transform: skew(-5deg) rotate(-5deg);  
+    -moz-transform: skew(-5deg) rotate(-5deg);  
+    -ms-transform: skew(-5deg) rotate(-5deg);  
+    -o-transform: skew(-5deg) rotate(-5deg);  
+    transform: skew(-5deg) rotate(-5deg);  
+    -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);  
+    -moz-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);  
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);  
+    z-index: -1;
+}
+.page-wrap:after {
+	left: auto;  
+    right: 12px;  
+    -webkit-transform: skew(5deg) rotate(5deg);  
+    -moz-transform: skew(5deg) rotate(5deg);  
+    -ms-transform: skew(5deg) rotate(5deg);  
+    -o-transform: skew(5deg) rotate(5deg);  
+    transform: skew(5deg) rotate(5deg);
+}

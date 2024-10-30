@@ -1,0 +1,17 @@
+.kb-action-menu .clearfix:after, .kb-recipe-wrap .clearfix:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+.kb-action-menu .clearfix, .kb-recipe-wrap .clearfix{
+	display: inline-block;
+}
+html[xmlns] .kb-action-menu .clearfix, html[xmlns] .kb-recipe-wrap .clearfix {
+	display: block;
+}
+* html .kb-action-menu .clearfix, * html .kb-recipe-wrap .clearfix {
+	height: 1%;
+}

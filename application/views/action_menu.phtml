@@ -1,0 +1,59 @@
+<div class="kb-action-menu">
+		
+	<ul class="clearfix">
+		
+		<?php if (isset($this->collectbuttonOn) && $this->collectbuttonOn == 'on' ) : ?>
+		<li>
+			<div class="kb-action-menu-item kb-btn-collect" onclick="openKBBookmarklet();" title="<?php echo $this->collectAlternative; ?>">
+				
+					<span>Collect</span>
+				
+			</div>
+		</li>	
+		<?php endif; ?>
+		
+		
+		<li<?php if (!$this->nutritionHighlights ) : ?> class="kb-last-menu-item"<?php endif; ?>>
+
+			<a href="<?php echo $this->printPermalink; ?>" rel="nofollow" target="_blank">
+
+				<div class="kb-action-menu-item kb-btn-print" title="<?php echo $this->printAlternative; ?>">
+				
+					<span>Print</span>
+				
+				</div>
+				
+			</a>
+			
+		</li>
+		
+		<?php if (($this->nutritionHighlights && !isset($this->nutritionOn)) || ($this->nutritionHighlights && $this->nutritionOn == 'on')) : ?>
+		
+		<li class="kb-last-menu-item">
+		
+			<div class="kb-action-menu-item kb-btn-dig-in" title="<?php echo $this->digInAlternative; ?>">
+				
+				<span>Dig-in</span>
+				
+			</div>
+			
+		</li>
+		
+		<?php endif; ?>
+		
+	</ul>
+	
+</div>
+
+<script type="text/javascript">
+	
+	function openKBBookmarklet()
+	{
+		var head = document.getElementsByTagName('head')[0];
+		var script = document.createElement('script');
+		script.type = 'text/javascript';
+		script.src = 'http://www.kitchenbug.com/js/bookmarklet/kb-init.js?UTM_Medium=ExtCollect' + Math.floor(Math.random()*99999);
+		head.appendChild(script);
+	};
+
+</script>

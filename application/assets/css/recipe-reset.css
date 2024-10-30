@@ -1,0 +1,54 @@
+.kb-recipe-container div,
+.kb-recipe-container span,
+.kb-recipe-container iframe,
+.kb-recipe-container object,
+.kb-recipe-container h1,
+.kb-recipe-container h2,
+.kb-recipe-container h3,
+.kb-recipe-container h4,
+.kb-recipe-container h5,
+.kb-recipe-container h6,
+.kb-recipe-container h6,
+.kb-recipe-container p,
+.kb-recipe-container a,
+.kb-recipe-container img,
+.kb-recipe-container strong,
+.kb-recipe-container u,
+.kb-recipe-container i,
+.kb-recipe-container ol,
+.kb-recipe-container ul,
+.kb-recipe-container li,
+.kb-recipe-container form,
+.kb-recipe-container label,
+.kb-recipe-container table {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+.kb-recipe-container {
+	line-height: 1;
+}
+.kb-recipe-container ul {
+	list-style: none;
+}
+.kb-recipe-container ol {
+	list-style: decimal;
+}
+.kb-recipe-container table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* reset CSS3 pseudo-elements */
+
+.kb-ingredients-container ul > li::before {
+	content: "" !important;
+}
+
+.kb-ingredients-container ul > li::after {
+	content: "" !important;
+}

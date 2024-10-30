@@ -1,0 +1,28 @@
+div.kb-recipe-container {
+	position: relative;
+}
+div#preloaded-images {
+	position: absolute;
+	overflow: hidden;
+	left: -9999px; 
+	top: -9999px;
+	height: 1px;
+	width: 1px;
+}
+body.noscroll {
+    overflow: hidden;
+}
+.kb-overlay {
+	display: none;
+	position: absolute;
+	overflow: auto;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	background: black;
+	z-index: 18000;
+	-moz-opacity: 0.6;
+	opacity: .60;
+	filter: alpha(opacity=60);
+}

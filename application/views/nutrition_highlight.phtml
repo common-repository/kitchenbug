@@ -1,0 +1,44 @@
+<div class="kb-nutrition-highlight" itemprop="nutrition" itemscope itemtype="http://schema.org/NutritionInformation">
+
+	<div class="kb-classified-highlights">
+
+		<div class="kb-classified-highlights-padder">
+		
+		<?php foreach ($this->classifiedHighlights as $highlight) : ?>
+			
+			<div class="kb-classified-highlight-container">
+				
+				<div class="kb-classified-highlight kb-highlight-<?php echo $highlight->class ?> kb-highlight-<?php echo $highlight->rating ?>">
+			
+					<span class="kb-highlight-class"><?php echo $highlight->desc ?></span>
+					<span class="kb-highlight-value" itemprop="<?php echo $highlight->itemprop ?>">
+						<span style="display: none"><?php echo $highlight->hiddenDesc ?> </span>
+						<?php echo $highlight->value . $highlight->units ?>
+					</span>
+			
+				</div>
+				
+			</div>
+			
+		<?php endforeach; ?>
+		
+		</div>
+
+	</div>
+	
+	<div class="kb-other-highlights">
+
+		<?php foreach ($this->otherHighlights as $key => $highlight) : ?>
+			
+			<span class="kb-other-highlight<?php echo ($key == count($this->otherHighlights)-1) ? ' kb-last-highlight' : '' ?>" itemprop="<?php echo $highlight->itemprop ?>">
+			
+				<span class="kb-highlight-desc"><?php echo ucfirst($highlight->desc) ?></span>
+				<span class="kb-highlight-value"><?php echo $highlight->value . $highlight->units?></span>
+			
+			</span>
+			
+		<?php endforeach; ?>
+		
+	</div>
+
+</div>

@@ -1,0 +1,36 @@
+<?php 
+
+KB_Http::getInstance()->request("http://". $this->config['url'] . "/admin/recipeviewed?recipe_id=" . 
+								$this->id . 
+								"&view_type=print&client_ip=" . 
+								$_SERVER['REMOTE_ADDR']); 
+
+?>
+<!DOCTYPE html>
+<html lang="en" id="kitchenbug-wp-plugin">
+
+	<head>
+
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="ROBOTS" content="NOINDEX, NOFOLLOW" />
+		<title><?php echo $this->name ?> (Print)</title>
+		<link rel='stylesheet' href='<?php echo $this->themeURL ?>/style-print.css' type='text/css' media='all' />
+		<link rel='stylesheet' href='<?php echo $this->pluginURL ?>/application/assets/css/nut-highlights.css' type='text/css' media='all' />
+		<link rel='stylesheet' href='<?php echo $this->pluginURL ?>/application/assets/css/analyzed-by.css' type='text/css' media="all" />
+		<link rel='stylesheet' href='<?php echo $this->pluginURL ?>/application/assets/css/print-reset.css' type='text/css' media="all" />
+		<link rel='stylesheet' href='<?php echo $this->pluginURL ?>/application/assets/css/style-print.css' type='text/css' media="all" />
+		<link rel='stylesheet' href='<?php echo $this->pluginURL ?>/application/assets/css/clearfix.css' type='text/css' media="all" />
+		
+	</head>
+
+	<body>
+	
+	<script>
+
+		var kb_ajaxURL = '<?php echo $this->ajaxURL ?>';
+
+	</script>	
+		
+		<div class="page-wrap recipe-print">
+
+			<div class="kb-recipe-container">

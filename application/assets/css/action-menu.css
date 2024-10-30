@@ -1,0 +1,73 @@
+@media screen and (max-width: 768px) {  
+	.kb-recipe-container .kb-action-menu ul li .kb-btn-print {
+		display: none;
+	}
+}
+.kb-recipe-container .kb-action-menu {
+	overflow: hidden;
+	float: right;
+}
+.kb-recipe-container .kb-action-menu * {
+	padding: 0 !important; 
+	margin: 0 !important; 
+	list-style: none !important;
+}
+.kb-recipe-container .kb-action-menu ul,
+.kb-recipe-container .kb-action-menu ul li {
+	background-image: none !important;
+}
+.kb-recipe-container .kb-action-menu ul li {
+	display: inline-block;
+	background-image: none;
+	float: left;
+}
+.kb-recipe-container .kb-action-menu ul li div {
+	display: block;
+	width: 38px;
+	height: 40px;
+	cursor: pointer;
+	position: relative;
+}
+.kb-recipe-container .kb-action-menu ul li .kb-btn-print {
+	background: url('../img/print-small.png') no-repeat center 4px;
+}
+.kb-recipe-container .kb-action-menu ul li .kb-btn-print:hover {
+	background: url('../img/print-small-hover.png') no-repeat center 4px;
+}
+.kb-recipe-container .kb-action-menu ul li .kb-btn-collect {
+	background: url('../img/collect-small.png') no-repeat center 4px;
+}
+.kb-recipe-container .kb-action-menu ul li .kb-btn-collect:hover {
+	background: url('../img/collect-small-hover.png') no-repeat center 4px;
+}
+.kb-recipe-container .kb-action-menu ul li .kb-btn-dig-in {
+	background: url('../img/dig-in.png') no-repeat center 4px;
+}
+.kb-recipe-container .kb-action-menu ul li .kb-btn-dig-in:hover {
+	background: url('../img/dig-in-hover.png') no-repeat center 4px;
+}
+.kb-recipe-container .kb-action-menu ul li span {
+	position: absolute;
+	width: 100%;
+	text-align: center;
+	bottom: 0px;
+	line-height: 13px;
+}
+.kb-recipe-container div.kb-action-menu ul li div {
+	font-size: 8px;
+	color: #999;
+	font-family: Arial;
+}
+.kb-recipe-container .kb-action-menu ul li div:hover {
+	color: #444;
+}
+
+/* reset CSS3 pseudo-elements */
+
+.kb-action-menu ul > li::before {
+	content: "" !important;
+}
+
+.kb-action-menu ul > li::after {
+	content: "" !important;
+}

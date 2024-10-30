@@ -1,0 +1,30 @@
+#kb_container .defaultSettings { font-size: 16px; position: relative; }
+#kb_container .logo { margin-bottom: 20px; }
+#kb_container .logo img { display:inline; float:left;}
+#kb_container th {font-size: 12px;}
+
+.kb-updated{
+	margin-top: 5px;
+	margin-right: 15px;
+	padding: 0 .6em;
+	display: none;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	border-width: 1px;
+	border-style: solid;
+}
+
+.kb-updated p{
+	margin: .5em 0;
+	padding: 2px;
+}
+
+.kb-settings-error{
+	background-color: #ffebe8;
+	border-color: #c00;
+}
+
+.kb-settings-success{
+	background-color: #ffffe0;
+	border-color: #e6db55;
+}

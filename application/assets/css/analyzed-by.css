@@ -1,0 +1,22 @@
+div.kb-recipe-container a.kb-analyzed-by {
+	float: right;
+	text-align: right;
+	margin-bottom: 10px;
+	display: block;
+	overflow: hidden;
+}
+div.kb-recipe-container a.kb-analyzed-by span {
+	font-size: 11px;
+	color: #999;
+	text-decoration: none;
+	float: left;
+}
+div.kb-recipe-container a.kb-analyzed-by img {
+	vertical-align: middle;
+	margin: 0 5px 0 0;
+	padding: 0;
+	display: inline;
+	border: none;
+	border-radius: none;
+	float: left;
+}

@@ -1,0 +1,1 @@
+var ScreenOverlay={show:function(){var a=jQuery(document).scrollTop();jQuery("body").addClass("noscroll");jQuery(".kb-overlay").css("top",a+"px").show()},hide:function(){jQuery("body").removeClass("noscroll");jQuery(".kb-overlay").hide()}};

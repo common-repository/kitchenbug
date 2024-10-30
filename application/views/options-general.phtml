@@ -1,0 +1,149 @@
+<?php
+$this->setLinks(array(
+	'kbug-admin.css'
+));
+?>
+<div id='kb_container'>
+	<div class="logo">
+		<img src='<?php echo $this->siteURL; ?>/application/assets/img/kb_top_logo.png' />
+	</div>
+	<div class="clear"></div>
+
+	<div id="kb-setting-error-settings_updated" class="kb-updated">
+	</div>
+	<div class="clear"></div>
+
+	<form method="post" action="">
+		<div class="metabox-holder">
+			<div class="postbox-container">
+				<div class="postbox" style="width:500px">
+					<h3 class="hndle">General Settings</h3>
+					<div class="inside">
+						<table class="form-table">
+							<tbody>
+								<tr>
+									<th style="text-align:right!important;"><?php echo $this->page->themeLabel; ?></th>
+									<td>
+										<select name="settings[theme]" style="width:170px;">
+											<?php foreach ($this->themes as $theme) : ?>
+												<option value="<?php echo $theme['slug']; ?>"<?php echo $this->theme == $theme['slug'] ? ' selected="selected"' : '' ?>><?php echo $theme['theme_name'] ?></option>
+											<?php endforeach; ?>
+										</select>
+									</td>
+								</tr>
+								<tr>
+									<th style="text-align:right!important;">
+										<?php echo $this->page->nutritionalAnalysisLabel; ?>
+									</th>
+									<td>
+										<input type="checkbox" name="settings[nutritionOn]" <?php echo $this->nutritionOn == 'on' ? ' checked="checked"' : '' ?>
+									</td>
+								</tr>
+								<tr>
+									<th style="text-align:right!important;">
+										<?php echo $this->page->excerptOnLabel; ?>
+									</th>
+									<td>
+										<input type="checkbox" name="settings[excerptOn]" <?php echo $this->excerptOn == 'on' ? ' checked="checked"' : '' ?>
+									</td>
+								</tr>
+								<tr>
+									<th style="text-align:right!important;">
+										<?php echo $this->page->wikilinksOnLabel; ?>
+									</th>
+									<td>
+										<input type="checkbox" name="settings[wikilinksOn]" <?php echo $this->wikilinksOn == 'on' ? ' checked="checked"' : '' ?>
+									</td>
+								</tr>
+								<tr>
+									<th style="text-align:right!important;">
+										<?php echo $this->page->collectbuttonOnLabel; ?>
+									</th>
+									<td>
+										<input type="checkbox" name="settings[collectbuttonOn]" <?php echo $this->collectbuttonOn == 'on' ? ' checked="checked"' : '' ?>
+									</td>
+								</tr>
+								<tr>
+									<th style="text-align:right!important;"></th>
+									<td>
+										<input type="submit" name="submit" id="kbsubmitbutton" value="<?php echo $this->page->submitButton; ?>" class="button-primary submit" />
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</form>
+	<div class="clear"></div>
+	<div class="metabox-holder">
+		<div class="postbox-container">
+			<div class="postbox" style="width:500px">
+				<h3 class="hndle">Miscellaneous Functions</h3>
+				<div class="inside">
+					<table class="form-table">
+						<tbody>
+							<tr>
+								<td>
+									<input type="submit" id="kb_backupRecipes" value="<?php echo $this->page->backupButton; ?>" class="button-primary submit"/>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+					<table class="form-table">
+						<tbody>
+							<?php echo $this->kb_file_err; ?>
+							<p style="margin-left: 20px;" class="install-help">Upload custom Kitchenbug theme file (in a .zip format):</p>
+							<form method="post" enctype="multipart/form-data" class="wp-upload-form" action="">
+								<?php wp_nonce_field('install-kitchenbug-theme'); ?>
+								<label style="margin-left: 20px;" class="screen-reader-text" for="kbthemezip">Blank</label>
+								<input style="margin-left: 20px;" type="file" id="pluginzip" name="kbthemezip">
+								<input type="submit" name="install-kitchenbug-theme" id="install-kitchenbug-theme" class="button-primary" value="Apply theme">
+							</form>
+						</tbody>
+					</table>
+
+			</div>
+		</div>
+	</div>
+
+	<input type="hidden" name="userId" value="<?php echo $this->userId; ?>" id="userId" />
+</div>
+
+<script>
+	jQuery(document).ready(function()
+	{
+		function KB_backupSuccess(data)
+		{
+			jQuery("#kb-setting-error-settings_updated").removeClass("kb-settings-error").addClass("kb-settings-success");
+			jQuery("#kb-setting-error-settings_updated").html("<p><strong>File saved successfully: " + data + "</strong></p>");
+			jQuery("#kb-setting-error-settings_updated").show();
+		}
+
+		function KB_backupFailure(data)
+		{
+			jQuery("#kb-setting-error-settings_updated").removeClass("kb-settings-success").addClass("kb-settings-error");
+			jQuery("#kb-setting-error-settings_updated").html("<p><strong>Failed to create backup file: " + data.responseText + "</strong></p>");
+			jQuery("#kb-setting-error-settings_updated").show();
+		}
+
+		jQuery("#kb_backupRecipes").click(function()
+		{
+			var ajaxURL = '<?php echo $this->ajaxURL ?>';
+			jQuery.ajax({
+				type: "POST",
+				url: ajaxURL,
+				data: {'action': 'kbbackupFiles'},
+				success: KB_backupSuccess,
+				error : KB_backupFailure
+			});
+
+		});
+
+	});
+
+</script>

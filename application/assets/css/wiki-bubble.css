@@ -1,0 +1,150 @@
+@media handheld, only screen and (max-width: 480px), only screen and (max-device-width: 480px){  
+
+	div.kb-recipe-container div.kb-wiki-bubble
+	{
+		display: none; 
+		position: absolute; 
+		background: #F7F5F0; 
+		border: 1px solid #C2B2A3; 
+		padding: 10px; 
+		width: 250px; 
+		z-index: 10000; 
+		-moz-border-radius: 5px; 
+		border-radius: 5px;
+		color: #78675F;
+		-moz-box-shadow: 0px 8px 8px #555;
+		-webkit-box-shadow: 0px 8px 8px #55;
+		box-shadow: 0px 8px 8px #555;
+	}
+
+}
+
+@media screen and (min-width: 480px){
+	
+	div.kb-recipe-container div.kb-wiki-bubble {
+		display: none; 
+		position: absolute; 
+		background: #F7F5F0; 
+		border: 1px solid #C2B2A3; 
+		padding: 10px; 
+		width: 350px; 
+		z-index: 10000; 
+		-moz-border-radius: 5px; 
+		border-radius: 5px;
+		color: #78675F;
+		-moz-box-shadow: 0px 8px 8px #555;
+		-webkit-box-shadow: 0px 8px 8px #55;
+		box-shadow: 0px 8px 8px #555;
+	}
+}
+
+div.kb-recipe-container div.kb-wiki-bubble h2 {
+	color: #78675F;
+	display: inline; 
+	font-size: 20px;
+	letter-spacing: 1px; 
+	font-weight: normal;
+	font-family: Georgia;
+}
+div.kb-recipe-container div.kb-wiki-bubble p {
+	font-size: 13px; 
+	line-height: 18px;
+	font-family: Georgia;
+}
+div.kb-recipe-container div.kb-wiki-bubble img {
+	float: right; 
+	height: 90px; 
+	margin: 0 0 5px 5px; 
+	clear: right;
+	border: 1px solid #C2B2A3;
+	background-color: white;
+	padding: 3px;
+}
+div.kb-recipe-container div.kb-wiki-bubble a.kb-wiki-bubble-btn {
+	font-size: 14px;
+	font-family: Georgia;
+	width: 48%;
+	display: block;
+	border: 1px solid #C2B2A3;
+	-moz-border-radius: 3px; 
+	border-radius: 3px;
+	text-align: center;
+	padding: 4px 0 3px;
+	text-decoration: none;
+	background: #F2EEE5;
+	color: #78675F;
+	margin-top: 10px;
+}
+div.kb-recipe-container div.kb-wiki-bubble a.kb-wiki-bubble-entry-btn {
+	float: left;
+}
+div.kb-recipe-container div.kb-wiki-bubble a.kb-wiki-bubble-facts-btn {
+	float: left;
+}
+div.kb-recipe-container div.kb-wiki-bubble a.kb-wiki-bubble-more-btn {
+	float: right;
+}
+div.kb-recipe-container div.kb-wiki-bubble a.kb-wiki-bubble-btn:hover {
+	text-decoration: none;
+	background-color: #EBE5D8;
+}
+div.kb-recipe-container div.kb-wiki-bubble a.kb-wiki-bubble-btn:active {
+	padding: 5px 0 2px 1px;
+	text-decoration: none;
+	background-color: #EBE5D8;
+}
+div.kb-recipe-container div.kb-wiki-bubble a.kb-wiki-bubble-close {
+	float: right;
+}
+div.kb-recipe-container span.kb-with-wiki.bubble-open {
+	border: 1px solid #C2B2A3;
+	-moz-border-radius: 3px 3px 0 0; 
+	border-radius: 3px 3px 0 0;
+	margin: -1px -3px;
+	padding: 0px 2px;
+	border-bottom: 1px solid #F7F5F0;
+	text-decoration: none;
+	z-index: 100000000;
+	position: relative;
+	background: #F7F5F0; 
+	color: #78675F;
+}
+div.kb-recipe-container div.kb-wiki-bubble a.kb-wiki-bubble-close {
+	background: url('../img/close.png') top left; 
+	text-indent: -1000px; 
+	width: 11px; 
+	height: 11px; 
+	margin-bottom: 5px;
+}
+.kb-horizontal-nutrition-container p {
+	margin-bottom: 5px;
+}
+.kb-horizontal-nutrition-container h2 {
+}
+.kb-horizontal-nutrition-container .kb-horizontal-nutrition-amount {
+}
+.kb-horizontal-nutrition-table {
+	margin-bottom: 5px;
+}
+.kb-horizontal-nutrition-table .kb-horizontal-nutrition-single-fact {
+	font-size: 12px;
+	line-height: 14px;
+	margin-right: 3px;
+}
+.kb-horizontal-nutrition-table .kb-horizontal-nutrition-single-fact:after {
+	content: " •";
+}
+.kb-horizontal-nutrition-table span.last {
+	margin-right: 0 !important;
+}
+.kb-horizontal-nutrition-table span.last:after {
+	content: "" !important;
+}
+div.kb-recipe-container div.kb-wiki-bubble p.kb-horizontal-nutrition-disclaimer {
+	font-size: 10px;
+	margin-bottom: 5px;
+}
+div.kb-recipe-container div.kb-wiki-bubble div.kb-wiki-bubble-entry {
+	overflow: hidden;
+}
+

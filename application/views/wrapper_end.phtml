@@ -1,0 +1,17 @@
+
+</div>
+
+<div class="kb-recipe-container-end"></div>
+
+<script type="text/javascript">
+
+var recipeData = recipeData || {};
+recipeData['<?php echo $this->id; ?>'] = {
+	measureSystem:'<?php echo $this->analyzed['system']; ?>',
+	yield:'<?php echo $this->servings; ?>',
+	ingredientDescriptions: <?php echo $this->ingredientsDescription ? $this->ingredientsDescription : '[]' ?>
+};
+
+var server_url = "http://<?php echo KB_Main::getInstance()->config['plugin']['url']; ?>";
+
+</script>

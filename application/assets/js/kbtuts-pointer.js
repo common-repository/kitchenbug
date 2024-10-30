@@ -1,0 +1,1 @@
+jQuery(document).ready(function(b){a(0);function a(c){pointer=kbtutsPointer.pointers[c];options=b.extend(pointer.options,{close:function(){b.post(ajaxurl,{pointer:pointer.pointer_id,action:"dismiss-wp-pointer"})}});b(pointer.target).pointer(options).pointer("open")}});

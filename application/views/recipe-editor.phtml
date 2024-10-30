@@ -1,0 +1,295 @@
+<?php
+
+	/**
+	*	Developer comments: 
+	*		1. Setup css files 
+	*		2. Setup js files 
+	*		3. Settings page inputs work with settings array (see example below) 
+	*/
+
+?>
+
+<div id="kb_container" style="background-color: white; display:none;">
+	
+	<div id="kb_preloader">
+		
+		<img src="<?php echo $this->siteURL; ?>/application/assets/img/preloader.gif" />
+		<span></span>
+		
+	</div>
+	
+	<!-- GENERAL PAGE HERE -->
+	
+	<div id="kb_form">		
+		
+		<input type="hidden" name="recipe[user_id]" id="user_id" value="<?php echo $this->user_id; ?>" />
+		
+		<div class="logoWrapper">
+			<div>
+				<img src="<?php echo $this->siteURL; ?>/application/assets/img/kb_top_logo.png" class="float" /> 
+			</div>
+			
+			<div class="kb-top-error-msg" style="display: none;"><span class="kb-top-error-msg-text">Sorry, we could not process your recipe.</span></div>
+			<div class="kb-top-warning-msg" style="display: none;"><span>Notice - Ingredients may require your attention.</span></div>
+			
+			<div class="elem_100">
+				<input type="button" name="kb_recipe_end" id="kb_recipe_end" value="<?php echo $this->page->addRecipeToPost; ?>" class="button-primary" />
+			</div>
+
+			<div class="elem_100">
+				<input type="button" name="back" id="kb_recipe_back" value="Back" class="button-secondary" />
+			</div>
+
+			<div class="elem_000">
+					
+				<input type="button" name="submit" id="kb_submit" value="<?php echo $this->page->continue; ?>" class="button-primary" />
+				<input type="button" name="kb_recipe_force_continue" id="kb_recipe_force_continue" value="<?php echo $this->page->forceContinue; ?>" class="button-secondary" />
+				<input type="hidden" value="{POST_ID}" id="kb_post_id" name="recipe[post_id]" />
+				<input type="hidden" value="<?php echo $this->postStatus; ?>" id="kb_post_status" name="recipe[post_status]" />
+				<input type="hidden" value="<?php echo $this->recipe_id; ?>" id="kb_cur_recipe_id" name="recipe[recipe_id]" />
+			</div>
+			
+			<div class="clear logoClear">&nbsp;</div>
+			
+		</div>
+		
+		<div id="kb_general">
+			
+			<div class="kb-login-frame" id="kb_li_iframe">					
+				<iframe style="height: 0px;" class="iframe_default" id="kb_iframe" name="kb_iframe" scrolling="no" FRAMEBORDER="0"></iframe>
+			</div>
+			<div class="clmn clmnWrapper_001">
+				<div class="clmn clmn_001 elem_001">Recipe Title
+					<span class="kb-character-counter" id="kb-name-character-counter" counter-limit="80">80</span>
+				</div>
+				<div class="clmn clmn_002 elem_002">
+					<input type="text" name="recipe[name]" id="recipe-name" value="<?php echo $this->name ?>" />
+					<p class="elem_002 kb_error" id="error_name"></p>
+				</div>
+
+				<div class="clmn clmn_001"><?php echo $this->page->shortDescription; ?>
+					<span class="kb-character-counter" id="kb-description-character-counter" counter-limit="500">500</span>
+				</div>
+				<div class="clmn clmn_002">
+					<textarea name="recipe[intro]" id="recipe-description"><?php echo $this->intro ?></textarea>
+				</div>
+				
+				
+				<div class="clmn clmn_001 elem_013">
+				
+					<?php echo $this->page->ingredients; ?>
+					<span class="ingredients-tooltip" id="ingredients-tooltip">?</span>
+					
+					<div class="tooltip-bubble" id="tooltip-bubble">
+						
+						<p>To add a <strong>section header</strong>, type a <strong>colon (:)</strong> at the beginning of the line. For example:</p>
+						
+						<div class="example-code">
+							
+							<p><strong>:For the tomato sauce</strong></p>
+							<p>2 onions</p>
+							<p>6 cloves of garlic</p>
+							<p>...</p>
+							
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="clmn clmn_002 elem_014">
+					
+					<textarea name="recipe[ingredients][0]" class="kb-ingredients-input" id="recipe-ingredients[0]"><?php echo $this->ingredients[0] ?></textarea>
+					<div class="kb-ingredients-error-details">
+						
+						<a class="kb-error-close" href="#" title="close">x</a>
+						
+						<h3>There are some issues.</h3>
+						<p class="kb-error-subtitle">Please correct them and click <span class="bold">Try Again</span>, or click <span class="bold">Skip</span> to continue.</p>
+						
+						<ul class="kb-ingredient-errors-list"></ul>
+						
+						<span class="kb-get-help">Problems with your analysis? <a target="_blank" class="kb-get-help-link" href="https://getsatisfaction.com/kitchenbug">Get Help</a></span>
+						
+					</div>
+					
+					<div>
+						
+						<p class="elem_014 kb_error kb-ingredients-error" id="error_ingredients[0]"></p>
+						<a href="#" title='More' class='kb-error-more-open'>More</a>
+						
+						<div class="clearBoth"></div>
+						
+					</div>
+					
+				</div>
+				
+			</div>		
+			<div class="clmn clmnWrapper_002">
+				<div class="clmn elem_005">
+					<div class="elem_004"><?php echo $this->page->prepTime; ?></div>
+					<input style="text-align: center;" type="text" class="shorttime" id="recipe-prep_time" name="viewOnly[prep_time]" value="<?php echo $this->prep_time ?>" />
+					<input type="hidden" value="<?php echo $this->prep_time ?>" name="recipe[prep_time]" />
+					<p class="elem_005 kb_error" id="error_prep_time"></p>
+				</div>
+				
+				<div class="clmn elem_007">
+					<div class="elem_006"><?php echo $this->page->cookTime; ?></div>
+					<input style="text-align: center;" type="text" class="shorttime" id="cook_time" name="viewOnly[cook_time]" value="<?php echo $this->cook_time ?>" />
+					<input type="hidden" value="<?php echo $this->cook_time ?>"id="recipe-cook_time"  name="recipe[cook_time]" />
+					<p class="elem_007 kb_error" id="error_cook_time"></p>
+				</div>
+				
+				<div class="clmn elem_009">
+					<div class="elem_008"><?php echo $this->page->Yield; ?></div>
+					<input style="text-align: center;" type="text" class="short numbersOnly" id="recipe-servings" name="recipe[servings]" value="<?php echo $this->servings ?>" />
+					<p class="elem_009 kb_error" id="error_servings"></p>
+				</div>
+				
+				<div class="clearBoth"></div>
+				<div style="margin-top:10px;"></div>
+				
+				<div class="clmn clmn_001 elem_003"><?php echo $this->page->directions; ?>
+				</div>
+				<div class="clmn clmn_002 elem_016">
+					<textarea id="recipe-directions[0]" name="recipe[directions][0]"><?php echo @$this->directions[0] ?></textarea>
+					<p class="elem_014 kb_error" id="error_directions[0]"></p>
+				</div>
+				
+				<div class="clmn clmn_001 elem_017" id="kb_r_tips"><?php echo $this->page->cookingTips; ?></div>
+				<div class="clmn clmn_002 elem_018">
+					<textarea name="recipe[tips]"><?php echo $this->tips ?></textarea>
+				</div>
+				
+				<div class="clearBoth"></div>
+			</div>
+			<div class="clearBoth"></div>	
+		</div>
+		
+		<!-- TAGS PAGE HERE -->
+		
+		<div id="kb_tags" >
+			
+			<div id="load-image-div" class="clmn clmn_001 elem_102">
+				<p class="elem_101">Add a cover image</p>
+				<div class="editor-preview-image">
+					<img id="kb_editor-preview-image-img" src='<?php echo empty($this->img_source) ? bloginfo('url') . '/wp-content/plugins/kitchenbug/application/assets/img/NoImageYet.gif' : $this->img_source ?>' />
+					<img class="kb-preview-image-hoverimage-open" title="Open Editor">
+					<img class="kb-preview-image-hoverimage-delete" title="Remove Image" />
+				</div>​
+				<div class="clearBoth"></div>
+				<input id="kb_upload_image" name="recipe[img_source]" type="hidden" size="30" value='<?php echo $this->img_source; ?>'/>	
+				<input style="margin-top:5px;" id="upload_image_button" value='Add image' type="button" /> - <span class="noteFont"><?php echo $this->page->uploadImageInstructions; ?></span>
+				<iframe style="height: 0px;" id="kb_fb_iframe" name="kb_fb_iframe" scrolling="no" FRAMEBORDER="0"></iframe>
+				<div class="clearBoth"></div>
+				
+			</div>
+			<div class="clearBoth"></div>
+			
+			<div id="kb-selects">
+				
+				<label><?php echo $this->page->category; ?></label>
+
+				<select name="recipe[category]">
+					
+					<option value="" <?php if (empty($this->category)){ echo ' selected="selected"'; } ?>>Select a Category</option>
+					<?php foreach ($this->page->categories as $id => $category) : ?>
+					
+					<option value="<?php echo $id ?>"<?php echo $this->category == $id ? ' selected="selected"' : '' ?>><?php echo $category ?></option>
+					
+					<?php endforeach; ?>
+					
+				</select>
+				
+				<label><?php echo $this->page->cuisine; ?></label>
+
+				<select name="recipe[cuisine]">
+					
+					<option value="" <?php if(empty($this->cuisine)){ echo ' selected="selected"'; } ?>>Select a Cuisine</option>
+					<?php foreach ($this->page->cuisines as $id => $cuisine) : ?>
+
+					<option value="<?php echo $id ?>"<?php echo $this->cuisine == $id ? ' selected="selected"' : '' ?>><?php echo $cuisine ?></option>
+						
+					<?php endforeach; ?>
+
+				</select>
+
+			</div>
+			<div class="clearBoth"></div>
+			
+			<div class="clmn elem_101 elem_102" style="margin-bottom: 10px;">
+				<input id="kb_nutrition_toggle" type="checkbox" <?php echo $this->nutritionOn == 'on' ? ' checked="checked"' : '';?>> <?php echo $this->page->showNutritionalValues; ?></input>
+			</div>
+			<div class="clearBoth"></div>
+
+		</div>
+		
+		<div style="height: 0px; overflow: hidden; float: right;"></div>
+		
+		<input type="hidden" name="userId" value="<?php echo $this->userId; ?>" id="userId" /> 
+	</div>
+
+
+
+
+	<div id="kb_form2" style="display:none;">		
+		
+		<input type="hidden" name="recipe[user_id]" id="user_id" value="<?php echo $this->user_id; ?>" />
+		
+		<div class="logoWrapper">
+			<div>
+				<img src="<?php echo $this->siteURL; ?>/application/assets/img/kb_top_logo.png" class="float" /> 
+			</div>
+			
+			<div class="kb-top-error-msg" style="display: none;"><span class="kb-top-error-msg-text">Sorry, we could not process your recipe.</span></div>
+			<div class="kb-top-warning-msg" style="display: none;"><span>Notice - Ingredients may require your attention.</span></div>
+			
+
+			
+			<div class="clear logoClear">&nbsp;</div>
+			
+		</div>
+		
+		<div id="kb_general">
+			<div id="kb-choose-recipe1">
+				<p class="howto">
+					<input type="button" name="kb-create-new-recipe-button" id="kb-create-new-recipe-button" class="button button-primary" value="Create a new recipe" tabindex="98">
+				</p>
+			</div>
+			<div id="kb-choose-recipe">
+				<p class="howto">Or choose an existing recipe</p>
+				<p>
+					<select id="recipelist">
+						<option value="" <?php if (empty($this->recipelist)){ echo ' selected="selected"'; } ?>>Select a Recipe</option>
+						<?php foreach ($this->page->recipelist as $recipe) : ?>
+							<option value="<?php echo $recipe["recipeID"] ?>"><?php echo $recipe["recipeName"] ?></option>
+						<?php endforeach; ?>
+					</select>
+					<input type="submit" name="kb-insert-recipe-button" id="kb-insert-recipe-button" class="button button-primary" value="Insert Recipe" tabindex="100">
+				</p>
+
+			</div>			
+			<div class="clearBoth"></div>
+		</div>
+	</div>
+
+	<div id="kb_form3" data-login="" style="display:none;"></div>
+	
+	<div class="simple_overlay" id="mies1">
+		<img id="mies1-img" src='<?php echo $this->img_source; ?>' />
+	</div>
+
+</div>
+
+<script>
+	if ("undefined" == typeof kBugObject)
+	{
+		kbug = kBugObject = {}; 
+    }; 
+	
+	kBugObject.recipeIds	= '<?php echo @$this->recipe_id; ?>';
+	kBugObject.isUpdating	= kBugObject.recipeIds? true:false; 
+	kBugObject.imageSource  = '<?php echo $this->img_source; ?>';
+	kBugObject.postURL		= '<?php echo $this->source; ?>';
+	//var kb-userid = '<?php echo $this->user_id ; ?>';
+	
+</script>

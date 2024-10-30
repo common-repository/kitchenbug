@@ -1,0 +1,51 @@
+div.kb-nutrition-highlight {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	overflow: hidden;
+}
+div.kb-nutrition-highlight div.kb-classified-highlights {
+	width: 100%;
+	clear: both;
+	overflow: hidden;
+	margin-bottom: 0.8em;
+}
+div.kb-nutrition-highlight div.kb-classified-highlights-padder {
+	margin: 0 1em;
+	overflow: hidden;
+	clear: both;
+}
+div.kb-nutrition-highlight div.kb-classified-highlights div.kb-classified-highlight-container {
+	width: 16.666%;
+	float: left;
+}
+div.kb-nutrition-highlight div.kb-classified-highlights div.kb-classified-highlight-container div.kb-classified-highlight {
+	font-size: 0.6em;
+	line-height: 2em;
+	text-align: center;
+	margin: 0 0.4em;
+	padding: 0.3em 0;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+div.kb-nutrition-highlight div.kb-classified-highlights div.kb-classified-highlight span {
+	display: block;
+}
+div.kb-nutrition-highlight div.kb-classified-highlights div.kb-classified-highlight span.kb-highlight-class {
+	font-weight: bold;
+	text-transform: uppercase;
+}
+div.kb-nutrition-highlight div.kb-other-highlights {
+	text-align: center;
+	clear: both;
+	font-size: 0.7em;
+	line-height: 1.3em;
+}
+div.kb-nutrition-highlight div.kb-other-highlights span.kb-other-highlight:after {
+	content: "•";
+}
+div.kb-nutrition-highlight div.kb-other-highlights span.kb-last-highlight:after {
+	content: "";
+}
+div.kb-nutrition-highlight div.kb-other-highlights span.kb-other-highlight span.kb-highlight-desc {
+	font-weight: bold;
+}
